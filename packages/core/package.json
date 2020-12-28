@@ -1,10 +1,10 @@
 {
   "name": "@example/core",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "@example/core": "^0.0"
+    "@example/core": "^1.0.0"
   }
 }
