@@ -34,17 +34,22 @@ jobs:
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1.1.0
 
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      - name: Get tags info
+        id: tags
+        # output: old, new
+        uses: ./.github/actions/get-release-tags
 
       - name: Generate changelog
-        id: get_changelog
+        id: changelog
+        # output: changelog
         uses: ./.github/actions/generate-changelog
+        with:
+          from: ${{steps.tags.outputs.old}}
+          to: ${{steps.tags.outputs.new}}
         env:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Print changelog
         env:
-          CHANGELOG: ${{steps.get_changelog.outputs.changelog}}
+          CHANGELOG: ${{steps.changelog.outputs.changelog}}
         run: echo $CHANGELOG

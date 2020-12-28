@@ -2,6 +2,12 @@ name: Generate a changelog
 description: Wraps lerna-changelog to generate a changelog between two commits or tags
 author: 'Orest Hazda'
 
+inputs:
+  from:
+    description: Old tag
+  to:
+    description: New tag
+
 outputs:
   changelog:
     description: Changelog formatted as a JSON string
