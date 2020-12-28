@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/orest22/lerna-example/compare/v1.3.1...v1.3.2) (2020-12-28)
+
+
+### Bug Fixes
+
+* add action file itself ([#7](https://github.com/orest22/lerna-example/issues/7)) ([6400d3b](https://github.com/orest22/lerna-example/commit/6400d3baa9308a682463eda3fa2e97b15d69d764))
+
+
+
+
+
 ## [1.3.1](https://github.com/orest22/lerna-example/compare/v1.3.0...v1.3.1) (2020-12-28)
 
 **Note:** Version bump only for package @orest22/core
