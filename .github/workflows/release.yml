@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+
+jobs:
+  log-updates:
+    name: Log packages to publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the new tag
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - name: This release will publish the following packages
+        run: git diff --name-only HEAD^..HEAD
+
+  npm-release:
+    name: Publish package to register
+    runs-on: ubuntu-latest
+    needs: log-updates
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1.1.0
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Generate changelog
+        id: get_changelog
+        run: |
+          $output=yarn changelog
+          echo ::set-output name=changelog::$output

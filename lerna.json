@@ -1,8 +1,18 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "1.1.0"
+  "version": "1.1.0",
+  "command": {
+    "version": {
+      "allowBranch": ["master", "release/*"],
+      "message": "chore(release): publish %s"
+    },
+    "changelog": {
+      "nextVersion": "Next version %v"
+    },
+    "publish": {
+      "conventionalCommits": true
+    }
+  }
 }
