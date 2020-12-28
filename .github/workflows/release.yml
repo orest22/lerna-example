@@ -34,8 +34,8 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
       - name: Generate changelog
-      - id: get_changelog
-      - uses: ./.github/actions/generate-changelog
+        id: get_changelog
+        uses: ./.github/actions/generate-changelog
         env:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
 
