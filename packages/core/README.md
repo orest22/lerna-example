@@ -2,9 +2,7 @@
 
 ## Commands
 
-TSDX scaffolds your new library inside `/src`.
-
-To run TSDX, use:
+To run the package, use:
 
 ```bash
 npm start # or yarn start
@@ -50,15 +48,6 @@ TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rol
 ### TypeScript
 
 `tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### GitHub Actions
-
-Two actions are added by default:
-
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
 
 ## Optimizations
 
