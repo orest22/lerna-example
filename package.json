@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/orest22/lerna-example"
   },
-  "private": false,
+  "private": true,
   "devDependencies": {
     "lerna": "^3.22.1",
     "lerna-changelog": "^1.0.1"

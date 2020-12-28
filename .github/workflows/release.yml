@@ -21,7 +21,9 @@ jobs:
     needs: log-updates
 
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -37,5 +39,10 @@ jobs:
       - name: Generate changelog
         id: get_changelog
         run: |
-          $output=yarn changelog
-          echo ::set-output name=changelog::$output
+          changelog=$(yarn changelog)
+          echo ::set-output name=CHANGELOG::${changelog}
+
+      - name: Print changelog
+        env:
+          CHANGELOG: ${{steps.get_changelog.outputs.CHANGELOG}}
+        run: echo $CHANGELOG
