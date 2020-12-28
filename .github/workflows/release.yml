@@ -1,8 +1,5 @@
 name: Release
-
-on:
-  push:
-
+on: [push]
 jobs:
   log-updates:
     name: Log packages to publish
