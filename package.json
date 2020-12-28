@@ -1,12 +1,23 @@
 {
   "name": "root",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orest22/lerna-example"
+  },
   "private": true,
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "lerna-changelog": "^1.0.1"
   },
   "scripts": {
-    "start": "lerna run start",
-    "bootstrap": "lerna bootstrap"
+    "build": "lerna run --parallel build",
+    "watch": "lerna run --parallel watch",
+    "lint": "lerna run --parallel lint",
+    "test": "lerna run --parallel test --",
+    "bootstrap": "lerna bootstrap",
+    "versionup": "lerna version --conventional-commits --no-git-tag-version",
+    "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\"",
+    "release": "lerna publish from-package --canary --yes"
   },
   "workspaces": [
     "packages/*"
