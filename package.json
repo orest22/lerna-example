@@ -10,7 +10,9 @@
     "lerna-changelog": "^1.0.1"
   },
   "scripts": {
-    "start": "lerna run start",
+    "build": "lerna run --parallel build",
+    "watch": "lerna run --parallel watch",
+    "lint": "lerna run --parallel lint",
     "bootstrap": "lerna bootstrap",
     "versionup": "lerna version --conventional-commits --no-git-tag-version",
     "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\"",
