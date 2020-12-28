@@ -1,0 +1,15 @@
+name: Generate a changelog
+description: Wraps lerna-changelog to generate a changelog between two commits or tags
+author: 'Orest Hazda'
+
+outputs:
+  changelog:
+    description: Changelog formatted as a JSON string
+
+runs:
+  using: node12
+  main: 'index.js'
+
+branding:
+  icon: file-text
+  color: orange

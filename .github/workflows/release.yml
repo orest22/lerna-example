@@ -1,7 +1,7 @@
 name: Release
-
 on:
   push:
+    tags: ['v*']
 
 jobs:
   log-updates:
@@ -15,13 +15,17 @@ jobs:
       - name: This release will publish the following packages
         run: git diff --name-only HEAD^..HEAD
 
-  npm-release:
-    name: Publish package to register
+  github-release:
+    name: Trigger GitHub release
     runs-on: ubuntu-latest
     needs: log-updates
 
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout the new tag
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -36,6 +40,11 @@ jobs:
 
       - name: Generate changelog
         id: get_changelog
-        run: |
-          $output=yarn changelog
-          echo ::set-output name=changelog::$output
+        uses: ./.github/actions/generate-changelog
+        env:
+          GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Print changelog
+        env:
+          CHANGELOG: ${{steps.get_changelog.outputs.changelog}}
+        run: echo $CHANGELOG
