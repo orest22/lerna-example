@@ -1,4 +1,6 @@
 {
+  "name": "@orest22/core",
+  "author": "Orest Hazda",
   "version": "1.1.0",
   "license": "MIT",
   "main": "dist/index.js",
@@ -30,8 +32,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "core",
-  "author": "Orest Hazda",
   "module": "dist/core.esm.js",
   "size-limit": [
     {
