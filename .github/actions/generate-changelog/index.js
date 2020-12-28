@@ -13,6 +13,6 @@ const config = load();
 
 const cl = new Changelog(config);
 
-cl.createMarkdown({ tagFrom, tagTo })
+cl.createMarkdown()
   .then((changelog) => core.setOutput('changelog', changelog))
   .catch((err) => core.warning(`Failed generating changelog ${err}`));
