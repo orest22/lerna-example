@@ -14,5 +14,5 @@ const config = load();
 const cl = new Changelog(config);
 
 cl.createMarkdown()
-  .then((changelog) => core.setOutput('changelog', changelog))
+  .then((changelog) => core.setOutput('changelog', JSON.stringify(changelog)))
   .catch((err) => core.warning(`Failed generating changelog ${err}`));
