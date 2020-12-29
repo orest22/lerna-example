@@ -33,9 +33,15 @@ jobs:
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1.1.0
 
+      - name: Get tags info
+        id: tags
+        # output: old, new
+        uses: ./.github/actions/get-release-tags
+
       - name: Build, Test, Publish
         run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc && yarn release
         env:
+          VERSION: ${{ steps.tags.outputs.new }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   github-release:
