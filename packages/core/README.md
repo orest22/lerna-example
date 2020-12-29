@@ -56,10 +56,6 @@ CJS, ESModules, and UMD module formats are supported.
 
 The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
 
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
 ## Including Styles
 
 There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
