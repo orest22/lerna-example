@@ -34,7 +34,7 @@ jobs:
         uses: bahmutov/npm-install@v1.1.0
 
       - name: Build, Test, Publish
-        run: yarn release
+        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc && yarn release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
