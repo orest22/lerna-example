@@ -66,6 +66,3 @@ There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinio
 
 For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
 
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
