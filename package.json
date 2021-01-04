@@ -15,7 +15,7 @@
     "lint": "lerna run --parallel lint",
     "test": "lerna run --parallel test --",
     "bootstrap": "lerna bootstrap",
-    "versionup": "lerna version",
+    "versionup": "lerna version --no-changelog",
     "changelog": "lerna-changelog"
   },
   "workspaces": [

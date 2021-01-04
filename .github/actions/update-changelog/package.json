@@ -1,0 +1,10 @@
+{
+  "name": "update-changelog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.6"
+  }
+}
