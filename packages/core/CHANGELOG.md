@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/orest22/lerna-example/compare/v1.3.13...v1.4.0) (2021-01-04)
+
+
+### Features
+
+* add type declaration for subtraction ([#14](https://github.com/orest22/lerna-example/issues/14)) ([09facbc](https://github.com/orest22/lerna-example/commit/09facbcccc911b7c88c685b1352b79709c63007c))
+
+
+
+
+
 ## [1.3.13](https://github.com/orest22/lerna-example/compare/v1.3.12...v1.3.13) (2021-01-04)
 
 **Note:** Version bump only for package @orest22/core
