@@ -88,3 +88,17 @@ jobs:
           body: ${{ fromJSON( steps.changelog.outputs.changelog) }}
           draft: true
           prerelease: true
+
+      - name: Update CHANGELOG.md
+        if: steps.is_main.outputs.result == 1
+        uses: ./.github/actions/update-changelog
+        with:
+          changelog: ${{ steps.changelog.outputs.changelog }}
+
+      - name: Commit CHANGELOG.md
+        if: steps.is_main.outputs.result == 1
+        run: |
+          git add CHANGELOG.md
+          git -c user.name="Action Bot" -c user.email="action-bot@users.noreply.github.com" \
+            commit -m "chore: add ${{ steps.tags.outputs.new }} to CHANGELOG.md [skip ci]" --no-verify --quiet
+          git push "https://action-bot:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" master
