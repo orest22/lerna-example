@@ -39,7 +39,7 @@ jobs:
         uses: ./.github/actions/get-release-tags
 
       - name: Build, Test, Publish
-        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc && yarn release
+        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc && lerna publish from-package --yes
         env:
           VERSION: ${{ steps.tags.outputs.new }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
