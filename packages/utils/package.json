@@ -1,6 +1,6 @@
 {
   "name": "@orest22/utils",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "publishConfig": {
     "access": "public"
   }
