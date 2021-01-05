@@ -1,7 +1,7 @@
 {
   "name": "@orest22/core",
   "author": "Orest Hazda",
-  "version": "1.4.7-alpha.0",
+  "version": "1.4.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
