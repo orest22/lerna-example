@@ -96,7 +96,9 @@ jobs:
 
       - name: Commit CHANGELOG.md
         run: |
-          git -c user.name="Action Bot" -c user.email="action-bot@users.noreply.github.com"
+          git config --list
+          git config user.name="Action Bot"
+          git config user.email="action-bot@users.noreply.github.com"
           git add CHANGELOG.md
           git commit -m "chore: add ${{ steps.tags.outputs.new }} to CHANGELOG.md [skip ci]" --no-verify --quiet
           git push "https://action-bot:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" master
