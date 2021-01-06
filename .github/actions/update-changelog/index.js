@@ -14,7 +14,7 @@ const CHANGELOG_PATH = path.resolve(
 );
 
 async function main() {
-  await exec(`cd ${__dirname}; npm ci`);
+  await exec(`cd ${__dirname}; yarn install --frozen-lockfile`);
 
   const changelog = await fs.readFile(CHANGELOG_PATH, 'utf8');
   if (!changelog.includes(INSERTION_POINT)) {
