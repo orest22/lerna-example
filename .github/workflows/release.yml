@@ -98,3 +98,6 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: 'changelog-${{ steps.tags.outputs.new }}'
+          title: Update changelog for ${{ steps.tags.outputs.new }}
+          base: master
+          delete-branch: true
